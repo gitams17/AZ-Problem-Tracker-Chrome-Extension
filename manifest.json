@@ -1,16 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "Your Chrome Extension Name",
+  "name": "AlgoZenith To-Do problem",
   "version": "0.1",
-  "author": "First Last",
-  "description": "A description about your Chrome Extension...",
+  "author": "Amarjeet Shukla",
+  "description": "A Chrome Extension that helps you create a To-Do list of AZ problems",
   "permissions": [
-    ""
+    "storage",
+    "tabs"
   ],
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "https://maang.in/*"
       ],
       "js": [
         "content.js"
@@ -22,17 +23,21 @@
   },
   "web_accessible_resources" : [
     {
-      "resources": [],
+      "resources": [
+        "assets/bookmark.png",
+        "assets/play.png",
+        "assets/delete.png"
+      ],
       "matches" : ["<all_urls>"]
     }
   ],
   "action": {
     "default_icon": {
-      "16": "logo.png",
-      "24": "logo.png",
-      "32": "logo.png"
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png",
+      "16": "assets/ext-icon.png"
     },
-    "default_popup": "index.html",
-    "default_title": "A tooltip popup description when you hover over the Chrome Extension icon."
+    "default_popup": "popup.html",
+    "default_title": "AlgoZenith To-Do Problem"
   }
 }
